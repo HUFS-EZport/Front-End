@@ -3,12 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from 'react';
-import SearchModal from "@/component/nav/search-modal";
+
 export default function IconList(props) {
 
     const tag = props.tag;
     const info = props.info
-    const [ favThings, setFavThings ] = useState(props.favThings)
+    const [ TLList, setTLList ] = useState(props.TLList)
     
     let isTeam = null;
 
@@ -19,11 +19,11 @@ export default function IconList(props) {
     }
     
     let content = [];
-    let newList = [ ...favThings ];
+    let newList = [ ...TLList ];
 
-    for(let i of favThings) {
+    for(let i of TLList) {
         let href = isTeam+i.id;
-        let src = i.icon;
+        let src = i.logoUrl;
         let alt = i.name;
         content.push(<Link key={ i.id } href={ href } className="col">
             <Image src={ src } width={ 60 } height={ 60 } style={ { fontSize:"40px" } } alt={ alt }></Image>
