@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Match( { data } ) {
 
-    
+
     let state;
     if(data.matchStatus===0) {
         state = "경기 종료"
@@ -26,14 +26,14 @@ export default function Match( { data } ) {
             </div>
         </>
     )
-    
+
     return(
         <div>
             <div>{data.leagueName}</div>
             <div>{data.matchDate}</div>
             <div>
                 <div>
-                    <Image src={data.homeTeamLogoUrl} width={100} height={100}></Image>
+                    <Image src={ data.homeTeamLogoUrl } width={ 100 } height={ 100 }></Image>
                     <div>
                         {data.homeTeamName}
                     </div>
@@ -45,11 +45,10 @@ export default function Match( { data } ) {
                     <div>
                         {data.awayTeamName}
                     </div>
-                    <Image src={data.awayTeamLogoUrl} width={100} height={100}></Image>
+                    <Image src={ data.awayTeamLogoUrl } width={ 100 } height={ 100 }></Image>
                 </div>
             </div>
             <div></div>
         </div>
     )
-
 }
