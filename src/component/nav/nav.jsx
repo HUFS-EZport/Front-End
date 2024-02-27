@@ -1,32 +1,28 @@
-import Link from "next/link";
-import Image from "next/image";
-import NavSearch from "@/component/nav/nav-search";
-import SearchModal from "@/component/nav/search-modal";
-import LoginButton from "./login-button";
-import SportButton from "./sport-button";
-
+import Search from "@/component/nav/search/search";
+import SearchModal from "@/component/nav/search/search-modal";
+import Brand from "@/component/nav/brand";
+import ButtonContainer from "@/component/nav/button/button-container";
+import buttons from "@/component/nav/button";
+import User from "@/component/nav/user/user";
 
 export default function Nav() {
-    
-    
+
     return <>
-        <nav className="navbar bg-primary">
+        <nav className="navbar navbar-expand-lg bg-primary">
             <div className="container">
-                <Link href="/" className="navbar-brand d-flex align-items-center">
-                    <div style={ { height: "2rem", width: "2rem", position: "relative" } }>
-                        <Image src="/logo.svg" fill alt="logo"/>
-                    </div>
-                    <div style={ { marginLeft: "10px" } }>
-                        Ezports
-                    </div>
-                </Link>
-                <SportButton/>
-                <LoginButton/>
-                <NavSearch />
+                <Brand />
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse"
+                    aria-controls="navbar-collapse" aria-expanded="false" >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbar-collapse">
+                    <ButtonContainer buttons={ buttons }/>
+                    <Search />
+                    <User />
+                </div>
+
             </div>
         </nav>
         <SearchModal />
-       
-        
     </>;
 }

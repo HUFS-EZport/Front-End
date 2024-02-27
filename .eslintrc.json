@@ -11,5 +11,12 @@
     "@stylistic/jsx-curly-spacing": ["error",{"when": "always"}],
     "@stylistic/object-curly-spacing": ["error", "always"],
     "@stylistic/semi-style": ["error", "last"]
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "./src/**/*.{js,jsx}"
+      ]
+    }
+  ]
 }

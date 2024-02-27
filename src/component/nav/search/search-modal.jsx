@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import SearchResult from "@/component/nav/search-result";
+import SearchResult from "@/component/nav/search/search-result";
 import { getRandomInt } from "@/util/random";
 import { shuffleArray } from "@/util/array";
 

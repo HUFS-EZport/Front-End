@@ -3,7 +3,7 @@ import IconList from "@/component/iconList/icon-list"
 import { useState } from "react"
 
 /*"data": {
-    "teams":[{ 
+    "teams":[{
         "id": Int,
         "name": String,
         "logoUrl": String
@@ -17,13 +17,13 @@ import { useState } from "react"
 
 export async function getSportData(id) {
     return {
-        teams: [{id: 1, name: "T1", logoUrl:"#"}],
-        leagues: [{id: 1, name: "L1", logoUrl: "#"}]
+        teams: [ { id: 1, name: "T1", logoUrl:"#" } ],
+        leagues: [ { id: 1, name: "L1", logoUrl: "#" } ]
     }
 }
 
 export default function SportCollapse( { sports } ) {
-    const [cachedSport, setCachedSport] = useState([]);
+    const [ cachedSport, setCachedSport ] = useState([]);
 
     const buttonOnClick = async (e) => {
         const sportId = e.target.dataset.spId;
@@ -36,23 +36,23 @@ export default function SportCollapse( { sports } ) {
         console.log(e.target.dataset.bsTarget);
     }
 
-    const buttonList = sports.map((sport, i) => <p key={i} className="d-inline-flex gap-1">
-        <button className="btn btn-primary" type="button" data-sp-id={sport.id}
+    const buttonList = sports.map((sport, i) => <p key={ i } className="d-inline-flex gap-1">
+        <button className="btn btn-primary" type="button" data-sp-id={ sport.id }
             data-bs-toggle="collapse" data-bs-target={ `#collapse-${i}` } aria-expanded="false" aria-controls="collapse"
-            onClick={buttonOnClick}    
+            onClick={ buttonOnClick }
         >
             {sport.name}
         </button>
     </p>);
 
-    const collapseList = cachedSport.map((sport, i) => <div key={i} className="collapse" id={`collapse-${i}`}>
+    const collapseList = cachedSport.map((sport, i) => <div key={ i } className="collapse" id={ `collapse-${i}` }>
         <div className="card card-body">
-           <IconList tag="소속 리그" info="league" TLList={ sport.leagues }/>
-           <IconList tag="소속 팀" info="team" TLList={ sport.teams }/>
+            <IconList tag="소속 리그" info="league" TLList={ sport.leagues }/>
+            <IconList tag="소속 팀" info="team" TLList={ sport.teams }/>
         </div>
     </div>);
 
-/*
+    /*
     for(let i = 0; i<sportList.length; i++) {
         let target = "collapseExample"+i;
         buttonList.push(
@@ -68,7 +68,7 @@ export default function SportCollapse( { sports } ) {
                 <div className="card card-body">
                     <IconList tag="소속 리그" info="league" TLList={ leagues }/>
                     <IconList tag="소속 팀" info="team" TLList={ teams }/>
-                    
+
                 </div>
             </div>
         )

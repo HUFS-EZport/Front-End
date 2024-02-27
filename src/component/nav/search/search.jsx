@@ -1,6 +1,6 @@
 "use client";
 
-export default function NavSearch() {
+export default function Search() {
     return <form className="d-flex" role="search">
         <button
             className="btn btn-outline-dark"
